@@ -52,7 +52,7 @@ class FewShotSeg(nn.Module):
         img_size = supp_imgs[0][0].shape[-2:]
 
         ###### Extract features ######
-        imgs_concat = torch.cat([supp_imgs.view(-1,batch_size,3,img_size),qry_imgs.view(-1,batch_size,3,img_size)],dim=0)
+        imgs_concat = torch.cat([supp_imgs.view(-1,batch_size,3,*img_size),qry_imgs.view(-1,batch_size,3,*img_size)],dim=0)
         img_fts = self.encoder(imgs_concat)
         fts_size = img_fts.shape[-2:]
 
