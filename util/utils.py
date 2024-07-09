@@ -27,6 +27,9 @@ CLASS_LABELS = {
         2: set(range(1, 81)) - set(range(41, 61)),
         3: set(range(1, 81)) - set(range(61, 81)),
     }
+    'VISION':{
+        '0':set(range(1,13))
+    }
 }
 
 def get_bbox(fg_mask, inst_mask):
